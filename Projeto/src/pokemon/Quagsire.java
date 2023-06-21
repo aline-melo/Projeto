@@ -6,67 +6,51 @@ import java.awt.event.*;
 
 
 public class Quagsire implements ActionListener{
-	
-	JLabel jlab; 
-	JPanel panel;
-	JLabel picLabel;
-	
+	 
+	JFrame janela = new JFrame("pokemon");
+	JButton botaoWooper = new JButton("wooper"); 
+	JButton botaoBulbassauro = new JButton("bulbassauro"); 
+	JButton botaoQuagsire = new JButton("quagsire"); 
+	JLabel textoAExibir = new JLabel("Pressione um botão."); 
+	JLabel imagemAExibir = new JLabel(new ImageIcon());
+
 	public Quagsire(){
-		// Cria um novo container JFrame.  
-		JFrame jfrm = new JFrame("pokemon");
-		
-		jfrm.setLayout(new FlowLayout()); 	
-		jfrm.setSize(420, 600); 
-		jfrm.setVisible(true); 
-		
-		
-		// Faz buttons. 
-		JButton wooper = new JButton("wooper"); 
-		JButton bulbassauro = new JButton("bulbassauro"); 
-		JButton quagsire = new JButton("quagsire"); 
+		//configura a nossa janela
+		janela.setLayout(new FlowLayout()); 	//estaremos usando o FlowLayout
+		janela.setSize(420, 600); //configura o tamanho
+		janela.setVisible(true); //coloca ela como visível
 
-		
-		// Cria um rótulo contendo apenas um texto.  
-		jlab = new JLabel("Pressione um botão."); 
-		
-		panel=new JPanel();  
-		picLabel = new JLabel(new ImageIcon());
-		panel.add(picLabel);
+		// Adiciona os botões, o texto e a imagem na janela. 
+		janela.add(botaoWooper);
+		janela.add(botaoBulbassauro);
+		janela.add(botaoQuagsire);
 
+		janela.add(textoAExibir); 
+
+		janela.add(imagemAExibir);
 		
 		// Adiciona eventos. 
-		wooper.addActionListener(this);
-		bulbassauro.addActionListener(this);
-		quagsire.addActionListener(this);
-		
-		// Adiciona os botões no painel de conteúdo. 
-		jfrm.add(panel);
-		jfrm.add(jlab); 
-
-		jfrm.add(wooper);
-		jfrm.add(bulbassauro);
-		jfrm.add(quagsire);
+		botaoWooper.addActionListener(this);
+		botaoBulbassauro.addActionListener(this);
+		botaoQuagsire.addActionListener(this);
 		
 		// Mostra o frame construído.
-		jfrm.setVisible(true); 
+		janela.setVisible(true); 
 	}
-	
 
  	//Método para gerência de eventos
-	public void actionPerformed(ActionEvent ae) {
-
-		if(ae.getActionCommand().equals("wooper"))  {
-			jlab.setText("wooper "); 
-			picLabel.setIcon(new ImageIcon("src\\files\\wooper.jpg"));
+	public void actionPerformed(ActionEvent evento) {
+		if(evento.getActionCommand().contains("wooper"))  {
+			textoAExibir.setText("wooper "); 
+			imagemAExibir.setIcon(new ImageIcon("src\\files\\wooper.jpg"));
 		}			
-	
-		if(ae.getActionCommand().equals("bulbassauro"))  {
-			jlab.setText("bulbassauro"); 
-			picLabel.setIcon(new ImageIcon("src\\files\\bulbassauro.jpg"));
+		if(evento.getActionCommand().equals("bulbassauro"))  {
+			textoAExibir.setText("bulbassauro"); 
+			imagemAExibir.setIcon(new ImageIcon("src\\files\\bulbassauro.jpg"));
 		}
-		if(ae.getActionCommand().equals("quagsire"))  {
-			jlab.setText("quagsire"); 
-			picLabel.setIcon(new ImageIcon("src\\files\\quagsire.jpg"));
+		if(evento.getActionCommand().equals("quagsire"))  {
+			textoAExibir.setText("quagsire"); 
+			imagemAExibir.setIcon(new ImageIcon("src\\files\\quagsire.jpg"));
 		}
 	} 
 	
