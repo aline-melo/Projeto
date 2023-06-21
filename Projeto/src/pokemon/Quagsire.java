@@ -9,9 +9,9 @@ public class Quagsire implements ActionListener{
 	 
 	//criando os elementos que serão usados na nossa janela
 	JFrame janela = new JFrame("pokemon");
-	JButton botaosquirtle = new JButton("squirtle"); 
+	JButton botaoSquirtle = new JButton("squirtle"); 
 	JButton botaoBulbassauro = new JButton("bulbassauro"); 
-	JButton botaocharmander = new JButton("charmander"); 
+	JButton botaoCharmander = new JButton("charmander"); 
 	JLabel textoAExibir = new JLabel("Pressione um botão."); 
 	JLabel imagemAExibir = new JLabel(new ImageIcon("src\\files\\pokebola.png"));
 
@@ -21,18 +21,18 @@ public class Quagsire implements ActionListener{
 		janela.setSize(420, 600); //configura o tamanho
 
 		// Adiciona os botões, o texto e a imagem na janela. 
-		janela.add(botaosquirtle);
+		janela.add(botaoSquirtle);
 		janela.add(botaoBulbassauro);
-		janela.add(botaocharmander);
+		janela.add(botaoCharmander);
 
 		janela.add(textoAExibir); 
 
 		janela.add(imagemAExibir);
 		
 		// Adiciona eventos (recebe um sinal caso o botão seja clicado
-		botaosquirtle.addActionListener(this);
+		botaoSquirtle.addActionListener(this);
 		botaoBulbassauro.addActionListener(this);
-		botaocharmander.addActionListener(this);
+		botaoCharmander.addActionListener(this);
 		
 		// Mostra a janela que construímos
 		janela.setVisible(true); 
